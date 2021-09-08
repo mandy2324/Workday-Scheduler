@@ -1,7 +1,7 @@
-$(function displayCurrentDate() {
+function displayCurrentDate() {
     var currentTime = moment();
     $("#currentDay").text(currentTime.format("dddd, MMMM Do"));
-});
+};
 
 // setting a function to execute when page loads
 window.onload = function() {
@@ -101,19 +101,10 @@ function containerClicked(event, timeblockList) {
     if (isSaveButton(event)) {
         var timeblockHour = getTimeblockHour(event);
         var textAreaValue = getTextAreaValue(timeblockHour);
-
         placeTimeblockInList(new TimeblockObj(timeblockHour, textAreaValue), timeblockList);
         saveTimeblockList(timeblockList);
     }
 }
-
-
-
-
-
-// functions for saving to local storage 
-
-
 
 function isSaveButton(event) {
     return event.target.matches('button') || event.target.matches('.fa-save');
@@ -139,7 +130,6 @@ function placeTimeblockInList(newTimeblockObj, timeblockList) {
     timeblockList.push(newTimeblockObj);
     return;
 }
-
 
 function saveTimeblockList(timeblockList) {
     localStorage.setItem('timeblockObjects', JSON.stringify(timeblockList));
