@@ -94,3 +94,64 @@ function appendTimeblockColumns(timeblockRow, hourCol, textAreaCol, saveBtnCol) 
         timeblockRow.appendChild(col);
     }
 }
+
+// to save my data to local Storage 
+
+function containerClicked(event, timeblockList) {
+    if (isSaveButton(event)) {
+        var timeblockHour = getTimeblockHour(event);
+        var textAreaValue = getTextAreaValue(timeblockHour);
+
+        placeTimeblockInList(new TimeblockObj(timeblockHour, textAreaValue), timeblockList);
+        saveTimeblockList(timeblockList);
+    }
+}
+
+
+
+
+
+// functions for saving to local storage 
+
+
+
+function isSaveButton(event) {
+    return event.target.matches('button') || event.target.matches('.fa-save');
+}
+
+function getTimeblockHour(event) {
+    return event.target.matches('.fa-save') ? event.target.parentElement.dataset.hour : event.target.dataset.hour;
+}
+
+function getTextAreaValue(timeblockHour) {
+    return document.querySelector(`#timeblock-${timeblockHour} textarea`).value;
+}
+
+function placeTimeblockInList(newTimeblockObj, timeblockList) {
+    if (timeblockList.length > 0) {
+        for (let savedTimeblock of timeblockList) {
+            if (savedTimeblock.hour === newTimeblockObj.hour) {
+                savedTimeblock.todo = newTimeblockObj.todo;
+                return;
+            }
+        }
+    }
+    timeblockList.push(newTimeblockObj);
+    return;
+}
+
+
+function saveTimeblockList(timeblockList) {
+    localStorage.setItem('timeblockObjects', JSON.stringify(timeblockList));
+}
+
+function setTimeblockText(timeblockList) {
+    if (timeblockList.length === 0) {
+        return;
+    } else {
+        for (let timeblock of timeblockList) {
+            document.querySelector(`#timeblock-${timeblock.hour} textarea`)
+                .value = timeblock.todo;
+        }
+    }
+}
