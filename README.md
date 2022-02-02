@@ -1,46 +1,35 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
-## Introduction
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-This is  a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app runs in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Description 
+This application uses third-party API and JavaScript to create a calendar-style scheduler allowing users to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS by using jQuery. 
 
- [Moment.js](https://momentjs.com/) library is used here to work with date and time. 
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
+## Installation 
+This does not require installation. 
 
-
-
-## deployed wesite link
-
-[click here](https://mandy2324.github.io/Workday-Scheduler/) to see my webpage.
-
-```Here you can add important events to a daily planner
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
-
-The following animation demonstrates the application functionality:
+## Usage 
+This application allows users to choose a time slot to enter a task. These tasks are stored in local storage so they are still accessible even when the application is refreshed. Current date is displayed on the top of the application and the times are color coded to let the user know when an event has passed, current, or in the future.<br>
+Please view live Git Hub [URL](https://mandy2324.github.io/Workday-Scheduler/)<br>
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 
+## License 
+This project is license under MIT
 
-## Contact me:
+## Contributing 
+Contributors should read the installation section. 
 
-* [ GITHUB.](https://github.com/mandy2324)
+## Tests
+There are no tests for this application. 
 
-* [ LINKEDIN.](https://www.linkedin.com/in/m23saini) 
+## Questions
+If you have any questions about this projects, please contact me on  [ LINKEDIN.](https://www.linkedin.com/in/m23saini). You can view more of my projects at  [ GITHUB.](https://github.com/mandy2324)
